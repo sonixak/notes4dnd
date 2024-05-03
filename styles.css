@@ -1,0 +1,16 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.notepad {
+  margin: 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+}
+
+button {
+  margin: 5px;
+}

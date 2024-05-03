@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Notes4D&D</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" type="image/png" href="https://static.vecteezy.com/system/resources/previews/004/263/180/original/paper-and-pencil-clipart-paper-and-pencil-icon-vector.jpg">
+</head>
+<body>
+
+   <button onclick="goToCharacterLink()"><img src="https://icon-library.com/images/dnd-icon/dnd-icon-22.jpg" alt="Description of the image" width="30" height="35"></button>
+
+  <script>
+    function goToCharacterLink() {
+      window.open('https://www.dndbeyond.com/characters', '_blank');
+    }
+  </script>
+
+   <button onclick="goToArtificerLink()">Artificer</button>
+   <button onclick="goToBardLink()">Bard</button>
+   <button onclick="goToClericLink()">Cleric</button>
+   <button onclick="goToDruidLink()">Druid</button>
+   <button onclick="goToPaladinLink()">Paladin</button>
+   <button onclick="goToRangerLink()">Ranger</button>
+   <button onclick="goToSorcererLink()">Sorcerer</button>
+   <button onclick="goToWarlockLink()">Warlock</button>
+   <button onclick="goToWizardLink()">Wizard</button>
+  
+  <script>
+    function goToArtificerLink() {
+      window.open('https://docs.google.com/presentation/d/1YA6XHQTU-3rwHM5twBM63nqJbxds9Q4An9LZPjL0B1U/edit#slide=id.p1', '_blank');
+    }
+  </script>
+  
+  <script>
+    function goToBardLink() {
+      window.open('https://docs.google.com/presentation/d/1tOso1Qy6gHyTGZpARCgMTEF-VCfp9pNOt0N3hD7uRiI/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToClericLink() {
+      window.open('https://docs.google.com/presentation/d/18ES5T-thj5D_XxX_I93rz7ZOGKYpJnMTsPpQfwaatBg/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToDruidLink() {
+      window.open('https://docs.google.com/presentation/d/17qhLIG4QeUEJQfdUKTWbhf-B0VwiTGqsIXA10VpoUdw/edit#slide=id.p9', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToPaladinLink() {
+      window.open('https://docs.google.com/presentation/d/1WBgA-rLu29DzgbDRQKtra6VV6BKs0g8l9PMjdHZtRRM/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToRangerLink() {
+      window.open('https://docs.google.com/presentation/d/1tQd79W7ZWCCrOoYcht-K-SmnqS2V8GYecCIEVrDYMSk/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToSorcererLink() {
+      window.open('https://docs.google.com/presentation/d/1-ApZgBFVBVqg6QomTk2fcuUEGMe7vFQVMzwBQUIGpeY/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+    <script>
+    function goToWarlockLink() {
+      window.open('https://docs.google.com/presentation/d/1KNy7cPrt9v2o9acgjkYQpGpHv0vWxkk7dkbDcQ5ZxOg/edit#slide=id.p1', '_blank');
+    }
+  </script>
+  
+    <script>
+    function goToWizardLink() {
+      window.open('https://docs.google.com/presentation/d/1jUlA8-WCiIvh2O4d3quIUnyDgLHv1fY6nX8OhAbao30/edit#slide=id.p1', '_blank');
+    }
+  </script>
+
+  <div class="notepad">
+    <textarea id="textArea" rows="20" cols="80"></textarea>
+    <button onclick="saveText()">Save</button>
+    <button onclick="loadText()">Load</button>
+  </div>
+
+  <button class="dice" onclick="rollDice(4)"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/dice_d_icon_138683.png" alt="Description of the image" width="30" height="35"></button>
+  <button class="dice" onclick="rollDice(6)"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/dice_d_icon_138682.png" alt="Description of the image" width="30" height="35"></button>
+  <button class="dice" onclick="rollDice(8)"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/dice_d_icon_136693.png" alt="Description of the image" width="30" height="35"></button>
+  <button class="dice" onclick="rollDice(10)"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/dice_d_icon_138686.png" alt="Description of the image" width="30" height="35"></button>
+  <button class="dice" onclick="rollDice(12)"><img src="https://icons.iconarchive.com/icons/pictogrammers/material/256/dice-d12-icon.png" alt="Description of the image" width="30" height="35"></button>
+  <button class="dice" onclick="rollDice(20)"><img src="https://cdn.icon-icons.com/icons2/2248/PNG/512/dice_d_icon_138684.png" alt="Description of the image" width="30" height="35"></button>
+  <div id="result"></div>
+
+  <script>
+    function rollDice(diceType) {
+      const diceResult = Math.floor(Math.random() * diceType) + 1;
+      document.getElementById('result').textContent = `You rolled a ${diceResult} on a d${diceType}!`;
+    }
+    
+    function saveText() {
+      const text = document.getElementById('textArea').value;
+      const blob = new Blob([text], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'D&DNotes.txt';
+      a.style.display = 'none';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    }
+
+    function loadText() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'text/plain';
+
+      input.onchange = function(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function() {
+          document.getElementById('textArea').value = reader.result;
+        };
+
+        reader.readAsText(file);
+      };
+
+      input.click();
+    }
+  </script>
+</body>
+</html>
